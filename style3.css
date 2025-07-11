@@ -15,6 +15,7 @@ body {
     background-size: 200% 200%;
     animation: gradientShift 20s ease infinite;
     overflow-x: hidden;
+    padding: 1rem;
 }
 
 @keyframes gradientShift {
@@ -28,7 +29,7 @@ body {
     backdrop-filter: blur(20px);
     padding: 2.5rem;
     border-radius: 2rem;
-    width: 90%;
+    width: 100%;
     max-width: 420px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
     transition: all 0.5s ease;
@@ -121,6 +122,8 @@ form input:focus {
     padding: 0.3rem 0.8rem;
     border: 1px solid rgba(255, 255, 255, 0.3);
     transition: all 0.3s ease;
+    width: 100%;
+    max-width: 180px;
 }
 
 .select-container:hover {
@@ -142,13 +145,13 @@ form input:focus {
 
 .select-container select {
     background: #97909600;
-    color: black;
+    color: #fff;
     font-size: 1rem;
     cursor: pointer;
     padding: 0.3rem;
     border: none;
     border-radius: 0.5rem;
-    margin-top: 1rem;
+    flex-grow: 1;
 }
 
 .msg {
@@ -206,4 +209,25 @@ form button:hover {
     font-size: 0.95rem;
     font-weight: 500;
     margin-bottom: 0.4rem;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1.5rem;
+        border-radius: 1.25rem;
+    }
+    .dropdown {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    .select-container {
+        max-width: 100%;
+        width: 100%;
+    }
+    h2 {
+        font-size: 1.6rem;
+    }
+    form button {
+        font-size: 1rem;
+    }
 }
