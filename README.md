@@ -18,7 +18,7 @@
 
 ## 🔗 Live Demo
 
-🌐 [Click here to use the app](https://adityacurrencyconverter.netlify.app)
+🌐 [Click here to use this](https://adityacurrencyconverter.netlify.app)
 
 ---
 
