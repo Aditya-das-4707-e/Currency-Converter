@@ -1,0 +1,204 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 1.5rem;
+    min-height: 45vh;
+    width: 40vh;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12rem;
+    height: 3px;
+    background: linear-gradient(to right, #e73c7e, #23a6d5);
+    border-radius: 3px;
+}
+
+.form {
+    margin: 2rem 0 1rem 0;
+}
+
+form select, button, input {
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+form input {
+    border: 1px solid rgba(211, 211, 211, 0.5);
+    font-size: 1rem;
+    height: 3rem;
+    padding-left: 1rem;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+form input:focus {
+    border-color: #23a6d5;
+    box-shadow: 0 0 0 2px rgba(35, 166, 213, 0.2);
+}
+
+.dropdown {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 0.5rem;
+}
+
+.dropdown i {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    color: #666;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.dropdown i:hover {
+    transform: rotate(180deg);
+    color: #e73c7e;
+    cursor: pointer;
+}
+
+.select-container img {
+    max-width: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.select-container:hover img {
+    transform: scale(1.1);
+}
+
+.select-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 6rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(211, 211, 211, 0.5);
+    padding: 0.2rem;
+    background: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+}
+
+.select-container:hover {
+    border-color: #23a6d5;
+    box-shadow: 0 0 0 2px rgba(35, 166, 213, 0.2);
+}
+
+.select-container select {
+    font-size: 1rem;
+    width: auto;
+    background: transparent;
+    cursor: pointer;
+    padding: 0.2rem;
+}
+
+.msg {
+    margin: 2rem 0;
+    padding: 1rem;
+    text-align: center;
+    background: rgba(35, 166, 213, 0.1);
+    border-radius: 0.5rem;
+    color: #333;
+    font-weight: 500;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.8; }
+    50% { opacity: 1; }
+    100% { opacity: 0.8; }
+}
+
+form button {
+    height: 3rem;
+    background: linear-gradient(to right, #e73c7e, #23a6d5);
+    color: white;
+    font-size: 1.15rem;
+    cursor: pointer;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border: none;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(231, 60, 126, 0.3);
+}
+
+form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(231, 60, 126, 0.4);
+}
+
+form button:active {
+    transform: translateY(0);
+}
+
+form button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+form button:hover::before {
+    left: 100%;
+}
+
+.amount p, .from p, .to p {
+    color: #555;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
